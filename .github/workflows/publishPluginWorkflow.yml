@@ -18,6 +18,12 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
+      - name: Clear Ivy and SBT caches
+        run: |
+          rm -rf ~/.ivy2/cache
+          rm -rf ~/.sbt/boot
+          rm -rf ~/.coursier
+
       - name: Publish SNAPSHOT to GitHub Packages
         env:
           GITHUB_ACTOR: ${{ github.actor }}
