@@ -1,5 +1,5 @@
 
-name := """sbt-flink-assembly-merge-plugin"""
+name := """sbt-flink-assembly-optimizer-plugin"""
 organization := "com.sp"
 version := "0.1-SNAPSHOT"
 
@@ -42,19 +42,29 @@ enablePlugins(ScriptedPlugin)
 scriptedLaunchOpts ++=
   Seq("-Xmx1024M", "-Dplugin.version=" + version.value)
 
-ThisBuild / githubWorkflowTargetTags ++= Seq("v*")
-ThisBuild / githubWorkflowPublishTargetBranches :=
-  Seq(RefPredicate.StartsWith(Ref.Tag("v")))
+//ThisBuild / githubWorkflowTargetTags ++= Seq("v*")
+//ThisBuild / githubWorkflowPublishTargetBranches :=
+//  Seq(RefPredicate.StartsWith(Ref.Tag("v")))
+//
+//ThisBuild / githubWorkflowPublish := Seq(
+//  WorkflowStep.Sbt(
+//    List("ci-release"),
+//    env = Map(
+//      "PGP_PASSPHRASE" -> "${{ secrets.PGP_PASSPHRASE }}",
+//      "PGP_SECRET" -> "${{ secrets.PGP_SECRET }}",
+//      "SONATYPE_PASSWORD" -> "${{ secrets.SONATYPE_PASSWORD }}",
+//      "SONATYPE_USERNAME" -> "${{ secrets.SONATYPE_USERNAME }}"
+//    )
+//  )
+//)
 
-ThisBuild / githubWorkflowPublish := Seq(
-  WorkflowStep.Sbt(
-    List("ci-release"),
-    env = Map(
-      "PGP_PASSPHRASE" -> "${{ secrets.PGP_PASSPHRASE }}",
-      "PGP_SECRET" -> "${{ secrets.PGP_SECRET }}",
-      "SONATYPE_PASSWORD" -> "${{ secrets.SONATYPE_PASSWORD }}",
-      "SONATYPE_USERNAME" -> "${{ secrets.SONATYPE_USERNAME }}"
-    )
-  )
+publishTo := Some("GitHub Packages" at "https://maven.pkg.github.com/Sahilpatkar/sbt-flink-assembly-optimizer-plugin")
+
+credentials += Credentials(
+  "GitHub Package Registry",
+  "maven.pkg.github.com",
+  sys.env.getOrElse("GITHUB_ACTOR", ""),
+  sys.env.getOrElse("GITHUB_TOKEN", "")
 )
+
 
