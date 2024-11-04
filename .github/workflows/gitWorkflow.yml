@@ -23,7 +23,7 @@ jobs:
         distribution: 'temurin'
         cache: 'sbt'
     - name: Run tests
-      run: ./test_plugin.sh
+      run: ./plugin_test.sh
 
     - name: Upload dependency graph
       uses: scalacenter/sbt-dependency-submission@v1
