@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sbt: com.softwaremill.sttp.model:core_2.12:1.4.18:jar" external-system-id="SBT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/model/core_2.12/1.4.18/core_2.12-1.4.18.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/model/core_2.12/1.4.18/core_2.12-1.4.18-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/model/core_2.12/1.4.18/core_2.12-1.4.18-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

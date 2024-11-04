@@ -1,0 +1,6 @@
+> clean
+> compile
+> assembly
+> assertExists target/scala-2.12/test-project-assembly-0.1.jar
+
+
