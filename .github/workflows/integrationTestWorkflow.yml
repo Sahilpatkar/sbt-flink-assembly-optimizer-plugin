@@ -25,4 +25,4 @@ jobs:
           echo "addSbtPlugin(\"com.sp\" % \"sbt-flink-assembly-optimizer-plugin\" % \"0.1-SNAPSHOT\")" >> project/plugins.sbt
 
       - name: Run tests
-        run: ./test_plugin.sh
+        run: ./plugin_test.sh
