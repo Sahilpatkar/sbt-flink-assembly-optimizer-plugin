@@ -1,5 +1,5 @@
 
-name := """sbt-flink-assembly-optimizer-plugin"""
+name := "sbt-flink-assembly-optimizer-plugin"
 organization := "com.sp"
 version := "0.1-SNAPSHOT"
 
