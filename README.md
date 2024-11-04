@@ -1,0 +1,1 @@
+# sbt-flink-assembly-optimizer-plugin
