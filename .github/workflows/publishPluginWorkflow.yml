@@ -23,3 +23,7 @@ jobs:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: sbt publish
+
+permissions:
+  contents: write
+  packages: write
