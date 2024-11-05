@@ -22,7 +22,7 @@ jobs:
       - name: Add GitHub Packages Resolver for SNAPSHOT
         run: |
           echo "resolvers += \"GitHub Packages\" at \"https://maven.pkg.github.com/Sahilpatkar/sbt-flink-assembly-optimizer-plugin\"" >> project/plugins.sbt
-          echo "addSbtPlugin(\"com.sp\" % \"sbt-flink-assembly-optimizer-plugin\" % \"0.1-SNAPSHOT\")" >> project/plugins.sbt
+          echo "addSbtPlugin(\"com.sp\" % \"sbt-flink-assembly-optimizer-plugin\" % \"0.2-SNAPSHOT\")" >> project/plugins.sbt
 
       - name: Run tests
         run: ./plugin_test.sh
