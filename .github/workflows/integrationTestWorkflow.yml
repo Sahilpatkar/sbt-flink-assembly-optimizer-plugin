@@ -10,6 +10,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+      packages: write
+
     steps:
       - uses: actions/checkout@v2
 
@@ -19,9 +23,13 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      - name: Add GitHub Packages Resolver for SNAPSHOT
+      - name: Configure GitHub Packages Resolver and Credentials
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "resolvers += \"GitHub Packages\" at \"https://maven.pkg.github.com/Sahilpatkar/sbt-flink-assembly-optimizer-plugin\"" >> project/plugins.sbt
+          echo "credentials += Credentials(\"GitHub Package Registry\", \"maven.pkg.github.com\", \"$GITHUB_ACTOR\", \"$GITHUB_TOKEN\")" >> ~/.sbt/1.0/global.sbt
           echo "addSbtPlugin(\"com.sp\" % \"sbt-flink-assembly-optimizer-plugin\" % \"0.2-SNAPSHOT\")" >> project/plugins.sbt
 
       - name: Run tests
