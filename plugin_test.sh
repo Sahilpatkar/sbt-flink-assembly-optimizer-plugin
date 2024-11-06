@@ -4,8 +4,12 @@
 TEST_DIR="src/sbt-test/sbt-flink-assembly-merge-plugin/simple"
 JAR_PATH="target/scala-2.12/test-project-assembly-0.1.jar"
 
+pwd
+
 # Navigate to the test project directory
 cd "$TEST_DIR" || { echo "Failed to navigate to test directory"; exit 1; }
+
+pwd
 
 # Run SBT clean and assembly commands
 echo "Running sbt clean assembly..."
