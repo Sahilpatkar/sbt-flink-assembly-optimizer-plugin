@@ -37,7 +37,7 @@ If you’re working locally, follow these steps to set up credentials:
 1. Generate a PAT:
 
     - Go to Settings > Developer settings > Personal access tokens in GitHub.
-    - Generate a token with read:packages (for public repositories) or read:packages and repo (for private repositories).
+    - Generate a token with read:packages.
 
 2. Add Credentials to SBT:
 
